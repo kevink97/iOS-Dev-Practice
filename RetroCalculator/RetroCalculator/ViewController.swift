@@ -70,6 +70,20 @@ class ViewController: UIViewController {
         processOperation(operation: currentOperation)
     }
     
+    @IBAction func onClearPressed(sender: UIButton) {
+        clearAll()
+        playSound()
+    }
+    
+    func clearAll() {
+        runningNumber = ""
+        currentOperation = Operation.Empty
+        leftValStr = ""
+        rightValStr = ""
+        result = ""
+        outputLbl.text = "0"
+    }
+    
     func playSound() {
         if btnSound.isPlaying {
             btnSound.stop()
@@ -80,7 +94,10 @@ class ViewController: UIViewController {
     func processOperation(operation: Operation) {
         playSound()
         if  currentOperation != Operation.Empty {
-            if runningNumber != "" {
+            if leftValStr == "" {
+                clearAll()
+                outputLbl.text = "invalid ops"
+            } else if runningNumber != "" {
                 rightValStr = runningNumber
                 runningNumber = ""
                 

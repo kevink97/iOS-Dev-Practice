@@ -1,7 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -16,12 +20,53 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launchbg" translatesAutoresizingMaskIntoConstraints="NO" id="83C-a0-3pS">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="launchground" translatesAutoresizingMaskIntoConstraints="NO" id="Msf-Sw-8oA">
+                                <rect key="frame" x="0.0" y="524" width="375" height="143"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Retro-Calc" translatesAutoresizingMaskIntoConstraints="NO" id="OWf-Ue-SW3">
+                                <rect key="frame" x="59" y="60" width="256" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="37" id="BJE-4z-eQO"/>
+                                    <constraint firstAttribute="width" constant="256" id="e9A-v6-8CA"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="robot" translatesAutoresizingMaskIntoConstraints="NO" id="il2-MC-6BA">
+                                <rect key="frame" x="67" y="116" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="4Qc-Rp-cXP"/>
+                                    <constraint firstAttribute="width" constant="240" id="xhi-xj-A82"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="83C-a0-3pS" secondAttribute="trailing" id="3HU-61-t07"/>
+                            <constraint firstItem="Msf-Sw-8oA" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="4XJ-Hx-gUm"/>
+                            <constraint firstItem="il2-MC-6BA" firstAttribute="top" secondItem="OWf-Ue-SW3" secondAttribute="bottom" constant="30" id="6b8-tj-CbC"/>
+                            <constraint firstItem="83C-a0-3pS" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="BOI-XY-EcJ"/>
+                            <constraint firstItem="OWf-Ue-SW3" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Bnu-A2-rwk"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="83C-a0-3pS" secondAttribute="bottom" id="Zgs-wa-jMH"/>
+                            <constraint firstItem="il2-MC-6BA" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="dLK-ol-Zz8"/>
+                            <constraint firstAttribute="trailing" secondItem="Msf-Sw-8oA" secondAttribute="trailing" id="g2Q-OZ-11A"/>
+                            <constraint firstItem="OWf-Ue-SW3" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="40" id="jbJ-gn-CoE"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="Msf-Sw-8oA" secondAttribute="bottom" id="x42-al-twL"/>
+                            <constraint firstItem="83C-a0-3pS" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="zrG-8f-lRK"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52" y="374.66266866566718"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Retro-Calc" width="755" height="111"/>
+        <image name="launchbg" width="1433" height="957"/>
+        <image name="launchground" width="999" height="225"/>
+        <image name="robot" width="786" height="402"/>
+    </resources>
 </document>
