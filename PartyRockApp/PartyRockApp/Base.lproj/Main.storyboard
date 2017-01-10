@@ -9,11 +9,6 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="still time.ttf">
-            <string>StillTime-Regular</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--MainVC-->
         <scene sceneID="tne-QT-ifu">
@@ -75,7 +70,7 @@
                                 <rect key="frame" x="0.0" y="211" width="375" height="456"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="76" id="rnO-l1-B15">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PartyCell" rowHeight="76" id="rnO-l1-B15" customClass="PartyCell" customModule="PartyRockApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="76"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rnO-l1-B15" id="dNO-A5-LFn">
@@ -94,7 +89,7 @@
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="36" id="U6L-BK-pI6"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="StillTime-Regular" family="Still Time" pointSize="30"/>
+                                                    <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="24"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -107,6 +102,10 @@
                                                 <constraint firstItem="t0u-yJ-Y2t" firstAttribute="centerY" secondItem="dNO-A5-LFn" secondAttribute="centerY" id="jDd-zv-ogS"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="videoPreviewImage" destination="t0u-yJ-Y2t" id="9ob-2j-M9G"/>
+                                            <outlet property="videoTitle" destination="m2x-UV-Qgv" id="6bd-D9-eqm"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -126,6 +125,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="tableView" destination="xez-Ot-h4S" id="yvR-OZ-AZZ"/>
                         <segue destination="mnP-2s-wus" kind="showDetail" identifier="VideoVC" id="9uv-6w-ZdO"/>
                     </connections>
                 </viewController>
@@ -152,14 +152,30 @@
                                     <constraint firstAttribute="height" constant="219" id="row-Qo-1nP"/>
                                 </constraints>
                             </webView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wxp-6Z-buU">
+                                <rect key="frame" x="21" y="269" width="343" height="73"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="73" id="BjF-3x-dub"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="29"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.88671875" green="0.88671875" blue="0.88671875" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="wxp-6Z-buU" firstAttribute="leading" secondItem="HzQ-69-6lI" secondAttribute="leadingMargin" constant="5" id="1cr-Ia-a8Z"/>
                             <constraint firstItem="kVC-Bc-RWV" firstAttribute="leading" secondItem="HzQ-69-6lI" secondAttribute="leading" id="4CO-at-a7F"/>
                             <constraint firstAttribute="trailing" secondItem="kVC-Bc-RWV" secondAttribute="trailing" id="9bz-A4-NHh"/>
                             <constraint firstItem="kVC-Bc-RWV" firstAttribute="top" secondItem="HzQ-69-6lI" secondAttribute="top" id="TPs-YF-kms"/>
+                            <constraint firstItem="wxp-6Z-buU" firstAttribute="top" secondItem="kVC-Bc-RWV" secondAttribute="bottom" constant="50" id="d1y-zP-JFh"/>
+                            <constraint firstItem="wxp-6Z-buU" firstAttribute="trailing" secondItem="HzQ-69-6lI" secondAttribute="trailingMargin" constant="5" id="ggI-fs-Z8A"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="titleLbl" destination="wxp-6Z-buU" id="c6I-pW-oLC"/>
+                        <outlet property="webView" destination="kVC-Bc-RWV" id="yCp-Ot-4rJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Av3-dL-XYg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
