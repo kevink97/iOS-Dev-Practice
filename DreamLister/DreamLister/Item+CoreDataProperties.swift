@@ -2,9 +2,8 @@
 //  Item+CoreDataProperties.swift
 //  DreamLister
 //
-//  Created by Kevin Kang on 1/12/17.
+//  Created by Kevin Kang on 1/13/17.
 //  Copyright © 2017 Kevin Kang. All rights reserved.
-//  This file was automatically generated and should not be edited.
 //
 
 import Foundation
@@ -19,8 +18,8 @@ extension Item {
 
     @NSManaged public var created: NSDate?
     @NSManaged public var details: String?
-    @NSManaged public var title: String?
     @NSManaged public var price: Double
+    @NSManaged public var title: String?
     @NSManaged public var toImage: Image?
     @NSManaged public var toItemType: ItemType?
     @NSManaged public var toStore: Store?
